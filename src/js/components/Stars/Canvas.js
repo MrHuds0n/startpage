@@ -41,6 +41,5 @@ export default class StarCanvas extends Component {
 }
 
 function percentage(n, max) {
-	console.log(n*max / 100)
 	return(n*max) / 100
 }

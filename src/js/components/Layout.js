@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 import Greeter from './Greeter'
 import Clock from './Clock'
-import Star from './StarNode'
-import Canvas from './StarCanvas'
+import Star from './Stars/Node'
+import Canvas from './Stars/Canvas'
 
 import stars from '../stars.json'
 
@@ -12,6 +12,10 @@ export default class Layout extends Component {
 		super()
 
 		this.stars = stars
+
+		this.handleActivate = this.handleActivate.bind(this)
+
+		this.state = {}
 	}
 
 	componentDidMount() {
@@ -19,13 +23,33 @@ export default class Layout extends Component {
 	}
 
 	tick() {
+		//@TODO: SET UP ANIMATIONS
+	}
 
+	handleActivate(number) {
+		this.setState({
+			activeStar: number
+		}, () => {
+			console.log(this.state)
+		})
 	}
 
 	render() {
-
+		const activeStar = this.state.activeStar
+		const handleActivate = this.handleActivate
 		const nodes = this.stars.map((el, i) => {
-			return <Star key={i} id={`star${i}`} top={el.top} left={el.left} icon={el.icon} />
+			return <Star 
+				key={i}
+				number={i}
+				top={el.top}
+				left={el.left}
+				icon={el.icon}
+				name={el.name}
+				search={el.search}
+				links={el.links}
+				active={activeStar === i}
+				activate={handleActivate}
+			/>
 		})
 
 		return(
