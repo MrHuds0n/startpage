@@ -3,6 +3,8 @@ A startpage design built on React
 
 ## Setup
 
+You'll need Node and npm.
+
 ```
 $ git clone https://github.com/MrHuds0n/startpage
 $ sudo npm i -g yarn #if you don't have yarn installed
