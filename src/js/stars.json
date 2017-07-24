@@ -1,0 +1,17 @@
+[
+	{
+		"top": 10,
+		"left": 50,
+		"icon": "icon-eu"
+	},
+	{
+		"top": 70,
+		"left": 60,
+		"icon": "icon-jp"
+	},
+	{
+		"top": 33,
+		"left": 17,
+		"icon": "icon-uk"
+	}
+]
