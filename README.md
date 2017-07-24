@@ -3,7 +3,7 @@ A startpage design built on React
 
 ## Setup
 
-You'll need Node and npm.
+You'll need Git, Node and npm.
 
 ```
 $ git clone https://github.com/MrHuds0n/startpage
