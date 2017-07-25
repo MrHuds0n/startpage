@@ -70,6 +70,13 @@ h1
 
 	font-size .8em
 
+	transform scale(1, 0) 
+	transform-origin 0 0
+	transition transform .2s ease-in-out
+
+	&.active
+		transform scale(1, 1)
+
 	ul
 		list-style none
 

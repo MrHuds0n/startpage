@@ -13,7 +13,12 @@ export default class StarNode extends Component {
 
 	handleClick(e) {
 		e.stopPropagation()
-		this.props.activate(this.props.number)
+		
+		new Promise((resolve, reject) => {
+			this.props.activate(this.props.number, resolve())
+		}).then(() => {
+		})
+
 	}
 
 
@@ -27,7 +32,7 @@ export default class StarNode extends Component {
 				<div class='star' onClick={this.handleClick}>
 					<i class={this.props.icon}></i>
 				</div>
-				<div class='star-menu'>
+				<div class={ `star-menu ${this.props.active ? 'active' : ''}` }>
 					<ul>
 						{links}
 					</ul>

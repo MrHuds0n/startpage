@@ -29,8 +29,6 @@ export default class Layout extends Component {
 	handleActivate(number) {
 		this.setState({
 			activeStar: number
-		}, () => {
-			console.log(this.state)
 		})
 	}
 
@@ -53,7 +51,7 @@ export default class Layout extends Component {
 		})
 
 		return(
-			<div class='wrapper'>
+			<div class='wrapper' onClick={() => this.handleActivate(false)}>
 				<Greeter />
 
 				{nodes}	
