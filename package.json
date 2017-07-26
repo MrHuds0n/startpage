@@ -20,6 +20,7 @@
     "eslint": "^4.3.0",
     "eslint-plugin-react": "^7.1.0",
     "json-loader": "^0.5.6",
+    "less": "^2.7.2",
     "style-loader": "^0.18.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
@@ -28,6 +29,6 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --content-base src --inline --hot",
-	"build": "webpack"
+    "build": "webpack"
   }
 }

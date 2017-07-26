@@ -5,7 +5,7 @@ import Clock from './Clock'
 import Star from './Stars/Node'
 import Canvas from './Stars/Canvas'
 
-import stars from '../stars.json'
+import stars from '../stars.js'
 
 export default class Layout extends Component {
 	constructor() {
