@@ -78,6 +78,42 @@ export default [
 				'address': 'http://devdocs.io'
 			}
 		]
+	},
+	{
+		'top': rand(),
+		'left': rand(),
+		'name': '4chan',
+		'icon': 'fa fa-leaf',
+		'search': {
+			'pattern': 'http://4chan.org/%s',
+			'placeholder': '4chan board'
+		},
+		'links': [
+			{
+				'title': '/pol/',
+				'address': 'http://4chan.org/pol'
+			},
+			{
+				'title': '/bant/',
+				'address': 'http://4chan.org/bant'
+			},
+			{
+				'title': '/biz/',
+				'address': 'http://4chan.org/biz'
+			},
+			{
+				'title': '/tg/',
+				'address': 'http://4chan.org/tg'
+			},
+			{
+				'title': '/g/',
+				'address': 'http://4chan.org/g'
+			},
+			{
+				'title': '/b/',
+				'address': 'http://4chan.org/b'
+			}   
+		]
 	}
 ]
 

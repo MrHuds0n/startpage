@@ -7,7 +7,7 @@ export default class StarCanvas extends Component {
 	}
 
 	componentDidMount() {
-		this.ticker = setInterval(this.tick.bind(this), 5000)
+		this.ticker = setInterval(this.tick.bind(this), 50)
 		this.tick()
 	}
 
@@ -17,17 +17,30 @@ export default class StarCanvas extends Component {
 
 		ctx.clearRect(0, 0, $canvas.width, $canvas.height)
 
-		for(let i=1; i<this.props.stars.length; i++) {
-			const top1 = percentage(this.props.stars[i-1].top, $canvas.height)
-			const left1 = percentage(this.props.stars[i-1].left, $canvas.width)
-			const top2 = percentage(this.props.stars[i].top, $canvas.height)
-			const left2 = percentage(this.props.stars[i].left, $canvas.width)
+		const stars = Array.from(document.querySelectorAll('.star-container')).map((el) => {
+			return el.getBoundingClientRect()
+		})
 
-			ctx.beginPath()
+		ctx.beginPath()
+		for(let i=1; i<stars.length; i++) {
+			const top1 = stars[i-1].top + calculateCentre(stars[i-1].top, stars[i-1].bottom) 
+			const left1 = stars[i-1].left + calculateCentre(stars[i-1].left, stars[i-1].right) 
+			const top2 = stars[i].top + calculateCentre(stars[i].top, stars[i].bottom) 
+			const left2 = stars[i].left + calculateCentre(stars[i].left, stars[i].right) 
+
 			ctx.moveTo(left1, top1)
 			ctx.lineTo(left2, top2)
 			ctx.stroke()
 		}
+
+		const top1 = stars[stars.length-1].top + calculateCentre(stars[stars.length-1].top, stars[stars.length-1].bottom) 
+		const left1 = stars[stars.length-1].left + calculateCentre(stars[stars.length-1].left, stars[stars.length-1].right) 
+		const top2 = stars[0].top + calculateCentre(stars[0].top, stars[0].bottom) 
+		const left2 = stars[0].left + calculateCentre(stars[0].left, stars[0].right) 
+
+		ctx.moveTo(left1, top1)
+		ctx.lineTo(left2, top2)
+		ctx.stroke()
 
 
 	}
@@ -40,6 +53,7 @@ export default class StarCanvas extends Component {
 	}
 }
 
-function percentage(n, max) {
-	return(n*max) / 100
+function calculateCentre(small, large) {
+	let width = large - small
+	return width/2
 }
