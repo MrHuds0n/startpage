@@ -7,6 +7,13 @@ export default class StarNode extends Component {
 		this.handleSearch = this.handleSearch.bind(this)
 
 		this.state = {
+			x: this.props.left,
+			y: this.props.top,
+			destX: this.props.left,
+			destY: this.props.top,
+			startX: this.props.left,
+			startY: this.props.top,
+
 			styles: {
 				top: `${this.props.top}%`,
 				left: `${this.props.left}%`
@@ -16,7 +23,7 @@ export default class StarNode extends Component {
 	}
 
 	componentDidMount() {
-		this.animate = setInterval(this.tick.bind(this), 10000)
+		this.animate = setInterval(this.tick.bind(this), 50)
 		this.tick()
 	}
 
@@ -44,15 +51,37 @@ export default class StarNode extends Component {
 	}
 
 	tick() {
-		const moveX = Math.floor(Math.random() * 20) - 10
-		const moveY = Math.floor(Math.random() * 20) - 10
+		if(!this.props.ready) return
 
-		this.setState({
-			styles: {
-				top: `${this.props.top + moveY}%`,
-				left: `${this.props.left + moveX}%`
+		if(!this.props.active) { 
+			let {x, y, destX, destY, startX, startY} = this.state
+
+			if(Math.round(x) === destX && Math.round(y) === destY) {
+				destX = Math.floor(Math.random() * 70) + 10
+				destY = Math.floor(Math.random() * 70) + 10
+
+				this.setState({
+					destX,
+					destY,
+					startX: this.state.x,
+					startY: this.state.y
+				})
 			}
-		})
+			else {
+				let distX = destX - startX
+				let distY = destY - startY
+
+				this.setState({
+					x: x + (distX * .0005),
+					y: y + (distY * .0005),
+
+					styles: {
+						top: `${this.state.y}%`,
+						left: `${this.state.x}%`
+					}
+				})
+			}
+		}
 	}
 
 	render() {
@@ -76,7 +105,7 @@ export default class StarNode extends Component {
 
 		return(
 			<div class='star-container' onClick={this.handleClick} style={this.state.styles}>
-				<div class='star' >
+				<div class={`star ${this.props.active ? 'active' : ''}`} >
 					<i class={this.props.icon}></i>
 				</div>
 				<div class={ `star-menu ${this.props.active ? 'active' : ''}` }>

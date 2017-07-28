@@ -48,6 +48,14 @@ export default [
 			{
 				'title': 'YouTube',
 				'address': 'http://youtube.com'
+			},
+			{
+				'title': 'Gmail',
+				'address': 'http://gmail.com'
+			},
+			{
+				'title': 'Protonmail',
+				'address': 'http://protonmail.com'
 			}
 		]
 	},
@@ -113,6 +121,62 @@ export default [
 				'title': '/b/',
 				'address': 'http://4chan.org/b'
 			}   
+		]
+	},
+	{
+		top: rand(),
+		left: rand(),
+		name: 'Netrunner',
+		icon: 'fa fa-laptop',
+		search: {
+			'pattern': 'https://netrunnerdb.com/find/?q=%s',
+			'placeholder': 'Search NetrunnerDB'
+		},
+		links: [
+			{
+				'title': 'Jinteki',
+				'address': 'http://jinteki.net'
+			},
+			{
+				'title': 'NetrunnerDB',
+				'address': 'http://netrunnerdb.com'
+			},
+			{
+				'title': 'ANCUR',
+				'address': 'http://ancur.wikia.com'
+			},
+			{
+				'title': 'Meteor',
+				'address': 'http://meteor.stimhack.com',
+			},
+			{
+				'title': 'AlwaysBeRunning',
+				'address': 'http://alwaysberunning.com'
+			},
+			{
+				'title': '/tg/anrg',
+				'address': 'http://4chan.org/tg/anrg'
+			}
+		]
+	},
+	{
+		top: rand(),
+		left: rand(),
+		name: 'Freelancer',
+		icon: 'fa fa-rocket',
+		links: [
+			{
+				title: 'DiscoveryGC',
+				address: 'http://discoverygc.com/forums'
+			},
+			{
+				title: 'Server Rules',
+				address: 'https://discoverygc.com/forums/showthread.php?tid=2334'
+			},
+			{
+				title: 'Player List',
+				address: 'https://discoverygc.com/forums/api_interface.php?action=players_online'
+			}
 		]
 	}
 ]

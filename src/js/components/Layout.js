@@ -12,6 +12,7 @@ export default class Layout extends Component {
 		super()
 
 		this.stars = stars
+		this.nodes = []
 
 		this.handleActivate = this.handleActivate.bind(this)
 
@@ -19,16 +20,18 @@ export default class Layout extends Component {
 	}
 
 	componentDidMount() {
-		setInterval(this.tick, 5000)
-	}
 
-	tick() {
-		//@TODO: SET UP ANIMATIONS
 	}
 
 	handleActivate(number) {
 		this.setState({
 			activeStar: number
+		})
+	}
+
+	handleInit() {
+		this.setState({
+			ready: true
 		})
 	}
 
@@ -47,6 +50,7 @@ export default class Layout extends Component {
 				links={el.links}
 				active={activeStar === i}
 				activate={handleActivate}
+				ready={this.state.ready}
 			/>
 		})
 
@@ -56,7 +60,7 @@ export default class Layout extends Component {
 
 				{nodes}	
 
-				<Canvas stars={this.stars} />
+				<Canvas stars={this.stars} ready={this.state.ready} handleInit={this.handleInit.bind(this)} />
 
 				<div class="clocks">
 					<Clock tz='America/New_York' />
