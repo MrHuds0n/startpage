@@ -5,11 +5,16 @@ A startpage design built on React
 
 ```
 $ git clone https://github.com/MrHuds0n/startpage
-$ sudo npm i -g yarn #if you don't have yarn installed
 $ cd startpage
-$ yarn #or npm i
-$ yarn dev #or npm run dev
+$ yarn
+$ yarn dev
+
+# do your changes
+
+$ yarn build
 ```
+
+Link to `src/index.html` for your output file. The output only needs the four files in the `page` branch.
 
 ## Customisation
 
