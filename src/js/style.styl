@@ -40,19 +40,19 @@ h1
 .star-container
 	position absolute
 	font-family body-font
-	z-index 10
+
+	z-index 2
 
 	transform translate(-50%, -50%) scale(0)
 	transition transform .3s ease-in-out
 
 	&.active
 		transform translate(-50%, -50%) scale(1)
-
+	
 .star
-	//position relative
+	position relative
 	user-select none
 	cursor pointer
-	z-index 10
 
 	border 1px fgcolor solid
 	background bgcolor
@@ -79,8 +79,6 @@ h1
 	left 3.75rem 
 	top 0
 
-	z-index 100
-
 	background rgba(bgcolor, .9)
 	padding .5em
 	margin-top -.5em
@@ -105,6 +103,8 @@ h1
 		font-size 1.1em
 		padding .2em 0
 		margin-bottom .5em
+
+		width 100%
 
 		border-bottom 2px fgcolor solid
 

@@ -2,6 +2,34 @@ export default [
 	{
 		'top': rand(),
 		'left': rand(),
+		'name': 'Social',
+		'icon': 'fa fa-users',
+		'links': [
+			{
+				'title': 'Facebook',
+				'address': 'http://facebook.com'
+			},
+			{
+				'title': 'Twitter',
+				'address': 'http://twitter.com'
+			},
+			{
+				'title': 'YouTube',
+				'address': 'http://youtube.com'
+			},
+			{
+				'title': 'Gmail',
+				'address': 'http://gmail.com'
+			},
+			{
+				'title': 'Protonmail',
+				'address': 'http://protonmail.com'
+			}
+		]
+	},
+	{
+		'top': rand(),
+		'left': rand(),
 		'name': 'Reddit',
 		'icon': 'fa fa-reddit',
 		'search': {
@@ -28,34 +56,6 @@ export default [
 			{
 				'title': 'clistuff',
 				'address': 'http://reddit.com/r/clistuff'
-			}
-		]
-	},
-	{
-		'top': rand(),
-		'left': rand(),
-		'name': 'Social',
-		'icon': 'fa fa-users',
-		'links': [
-			{
-				'title': 'Facebook',
-				'address': 'http://facebook.com'
-			},
-			{
-				'title': 'Twitter',
-				'address': 'http://twitter.com'
-			},
-			{
-				'title': 'YouTube',
-				'address': 'http://youtube.com'
-			},
-			{
-				'title': 'Gmail',
-				'address': 'http://gmail.com'
-			},
-			{
-				'title': 'Protonmail',
-				'address': 'http://protonmail.com'
 			}
 		]
 	},

@@ -51,7 +51,9 @@ export default class StarNode extends Component {
 	}
 
 	tick() {
-		if(!this.props.ready) return
+		if(!this.props.ready) {
+			return
+		}
 
 		if(!this.props.active) { 
 			let {x, y, destX, destY, startX, startY} = this.state
@@ -77,10 +79,20 @@ export default class StarNode extends Component {
 
 					styles: {
 						top: `${this.state.y}%`,
-						left: `${this.state.x}%`
+						left: `${this.state.x}%`,
+						zIndex: 2
 					}
 				})
 			}
+		}
+		else {
+			this.setState({
+				styles: {
+					top: `${this.state.y}%`,
+					left: `${this.state.x}%`,
+					zIndex: 100
+				}
+			})
 		}
 	}
 
