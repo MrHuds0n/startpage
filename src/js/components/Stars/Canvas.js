@@ -4,7 +4,7 @@ export default class StarCanvas extends Component {
 	constructor(props) {
 		super(props)
 
-		this.framerate = 30
+		this.framerate = 20
 
 	}
 
